@@ -28,4 +28,5 @@ platform :ios do
 
     emails = values[:test_email] ? values[:test_email] : ['durgesh.pandey@globant.com'] # You can list more emails here
     groups = values[:test_email] ? nil : nil # You can define groups on the web and reference them here
+  end
 end
