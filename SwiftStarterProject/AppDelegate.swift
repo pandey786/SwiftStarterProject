@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var hud: MBProgressHUD?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -41,27 +39,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    // MARK: - MBProgress HUD
-    // MARK: -
-    
-    func startHUDWith(title: String) {
-        hud = MBProgressHUD.showAdded(to: self.window!, animated: true)
-        
-        if title.characters.count > 0 {
-            hud?.label.text = title
-        }
-        
-        window?.rootViewController?.view.isUserInteractionEnabled = false
-        window?.rootViewController?.navigationController?.navigationBar.isUserInteractionEnabled = false
-    }
-    
-    func stopHUD() {
-        
-        hud?.hide(animated: true)
-        window?.rootViewController?.view.isUserInteractionEnabled = true
-        window?.rootViewController?.navigationController?.navigationBar.isUserInteractionEnabled = true
-    }
-
 }
 
